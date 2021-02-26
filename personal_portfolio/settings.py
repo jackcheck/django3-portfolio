@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'a#2rii_8*_rzk42=w*zoe=$k-^!n6advls!plkx7n9$hy%)1v_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gcecchetti.pythonanywhere.com']
 
 
 # Application definition
@@ -115,12 +115,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+import os
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT= os.path.join(BASE_DIR / 'static')
 
 MEDIA_URL= '/media/'
-
-MEDIA_ROOT= BASE_DIR / 'media'
+MEDIA_ROOT= os.path.join(BASE_DIR / 'media')
